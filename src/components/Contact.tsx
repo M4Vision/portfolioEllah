@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 import { contact } from "@/data/content";
 
-const FORMSPREE = "https://formspree.io/f/3045791324738420546";
+const FORMSPREE = "https://formspree.io/f/xbdnlkpq";
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
