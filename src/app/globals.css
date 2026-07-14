@@ -1180,7 +1180,7 @@
 
     .process-step { flex: 0 0 100%; }
     .process-node { width: 72px; height: 72px; }
-    .process-node svg { width: 60px; height: 30px; }
+    .process-node img { width: 44px; height: 44px; }
     .process-step-name { font-size: 13px; }
     .process-step-desc { font-size: 11px; }
 
