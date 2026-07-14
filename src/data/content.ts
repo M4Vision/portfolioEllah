@@ -14,6 +14,7 @@ export const navLinks: NavLink[] = [
   { label: "À propos", href: "#about" },
   { label: "Compétences", href: "#skills" },
   { label: "Services", href: "#services" },
+  { label: "Tarifs", href: "#pricing" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Me contacter", href: "#contact", isCta: true },
 ];

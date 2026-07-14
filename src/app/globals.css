@@ -106,6 +106,16 @@
   }
   .nav-cta:hover { background: var(--orange) !important; transform: translateY(-1px); }
 
+  .nav-toggle {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .nav-toggle .bar {
+    width: 24px; height: 2px;
+    background: var(--lavender); border-radius: 2px;
+    transition: 0.2s;
+  }
+
   /* ─── HERO ─── */
   #hero {
     min-height: 100vh;
@@ -1098,6 +1108,9 @@
   .reveal-delay-4 { transition-delay: 0.4s; }
 
   /* ─── RESPONSIVE ─── */
+  section[id] { scroll-margin-top: 90px; }
+  #pricing .section-tag { justify-content: center; }
+
   @media (max-width: 900px) {
     #hero { grid-template-columns: 1fr; padding: 100px 32px 60px; }
     .hero-visual { display: none; }
@@ -1105,9 +1118,88 @@
     .about-grid { grid-template-columns: 1fr; gap: 48px; }
     .contact-grid { grid-template-columns: 1fr; gap: 48px; }
     nav { padding: 16px 32px; }
-    .nav-links { display: none; }
+    .nav-toggle { display: flex; z-index: 11; }
+    .nav-links {
+      display: none;
+      position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; gap: 20px;
+      padding: 24px 32px;
+      background: rgba(30,22,54,0.98);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(177,124,196,0.2);
+    }
+    .nav-links.nav-open { display: flex; }
+    .nav-links a { font-size: 14px; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .portfolio-grid { grid-template-columns: 1fr; }
     .portfolio-item:first-child { grid-column: span 1; }
     footer { flex-direction: column; gap: 16px; text-align: center; }
+
+    .about-badge.b1 { top: -10px; right: -10px; }
+    .about-badge.b2 { bottom: 20px; left: -10px; }
+    .about-badge-num { font-size: 18px; }
+    .about-photo-name { font-size: 22px; }
+    .process-steps { flex-wrap: wrap; gap: 32px; justify-content: center; }
+    .process-step { flex: 0 0 calc(50% - 32px); }
+    .pricing-card { padding: 32px 24px; }
+    .orbit-float-card { display: none; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .service-card { padding: 32px 24px; }
+  }
+
+  @media (max-width: 640px) {
+    #hero { padding: 90px 20px 50px; }
+    section { padding: 50px 20px; }
+    nav { padding: 12px 20px; }
+    .nav-logo img { width: 120px; }
+
+    .hero-title { font-size: clamp(30px, 10vw, 40px); }
+    .hero-subtitle { font-size: 14px; }
+    .hero-buttons { flex-direction: column; align-items: flex-start; }
+    .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 14px 24px; font-size: 13px; }
+
+    .section-title { font-size: clamp(24px, 8vw, 28px); }
+    .section-sub { font-size: 14px; }
+    .about-desc { font-size: 14px; }
+    .about-intersections { gap: 8px; }
+    .about-pill { font-size: 12px; padding: 6px 14px; }
+    .about-badge { padding: 8px 14px; }
+    .about-badge.b1 { top: -8px; right: -8px; }
+    .about-badge.b2 { bottom: 10px; left: -8px; }
+
+    .service-card { padding: 28px 20px; }
+    .service-name { font-size: 18px; }
+    .service-card .service-arrow { display: none; }
+
+    #pricing { text-align: center; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+    .pricing-card { padding: 28px 20px; }
+    .pricing-amount { font-size: 34px; }
+    .pricing-desc { font-size: 13px; }
+
+    .process-step { flex: 0 0 100%; }
+    .process-node { width: 72px; height: 72px; }
+    .process-node svg { width: 60px; height: 30px; }
+    .process-step-name { font-size: 13px; }
+    .process-step-desc { font-size: 11px; }
+
+    .stat-num { font-size: 32px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .stat-card { padding: 24px 12px; }
+
+    .portfolio-filters { gap: 6px; }
+    .filter-btn { font-size: 12px; padding: 6px 14px; }
+    .portfolio-grid { gap: 16px; }
+
+    .vision-quote { font-size: clamp(24px, 8vw, 32px); }
+    .vision-text { font-size: 14px; }
+    .vision-val { font-size: 12px; padding: 8px 18px; }
+
+    .contact-form { padding: 28px 20px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .contact-desc { font-size: 14px; }
+    .contact-link { font-size: 13px; }
+    .contact-link-icon { width: 36px; height: 36px; font-size: 15px; }
+    .form-submit { font-size: 14px; padding: 14px; }
   }
